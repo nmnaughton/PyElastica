@@ -438,7 +438,7 @@ def get_shear_modulus(youngs_modulus, kwargs):
         # User set poisson ratio but not the shear modulus. Then use poisson ratio to compute shear modulus, and
         # raise a warning.
         poisson_ratio = kwargs.get("poisson_ratio")
-        shear_modulus = youngs_modulus / (poisson_ratio + 1.0)
+        shear_modulus = 0.5 * youngs_modulus / (poisson_ratio + 1.0)
 
         message = (
             "The given Poisson ratio of "
@@ -446,7 +446,7 @@ def get_shear_modulus(youngs_modulus, kwargs):
             + " is used only to compute a shear modulus of "
             + str(shear_modulus)
             + ", "
-            "using the equation: shear_modulus = youngs_modulus / (poisson_ratio + 1.0). "
+            "using the equation: shear_modulus = 0.5 * youngs_modulus / (poisson_ratio + 1.0). "
             "Use of a Poisson ratio will be depreciated in a future release. "
             "It is encouraged that you discontinue using a Poisson ratio and instead directly provide the shear_modulus. \n"
         )
@@ -458,7 +458,7 @@ def get_shear_modulus(youngs_modulus, kwargs):
         # If user does not set poisson ratio or shear modulus, then take poisson ratio as 0.5 and raise warning.
         poisson_ratio = 0.5
 
-        shear_modulus = youngs_modulus / (poisson_ratio + 1.0)
+        shear_modulus = 0.5 * youngs_modulus / (poisson_ratio + 1.0)
 
         message = (
             "Shear modulus cannot be found in kwargs. "
@@ -467,7 +467,7 @@ def get_shear_modulus(youngs_modulus, kwargs):
             + " is used to compute shear modulus "
             + str(shear_modulus)
             + ", "
-            "using the equation: shear_modulus = youngs_modulus / (poisson_ratio + 1.0)."
+            "using the equation: shear_modulus = 0.5 * youngs_modulus / (poisson_ratio + 1.0)."
         )
 
         warnings.warn(message, category=UserWarning)
