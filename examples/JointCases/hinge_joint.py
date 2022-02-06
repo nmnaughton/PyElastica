@@ -37,7 +37,7 @@ density = 1750
 nu = 0.001
 E = 3e7
 poisson_ratio = 0.5
-shear_modulus = E / (poisson_ratio + 1.0)
+shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 
 start_rod_1 = np.zeros((3,))
 start_rod_2 = start_rod_1 + direction * base_length

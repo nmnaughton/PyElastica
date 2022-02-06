@@ -42,7 +42,7 @@ def run_snake(
     nu = 1e-4
     E = 1e6
     poisson_ratio = 0.5
-    shear_modulus = E / (poisson_ratio + 1.0)
+    shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 
     shearable_rod = CosseratRod.straight_rod(
         n_elem,

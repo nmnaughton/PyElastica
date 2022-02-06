@@ -85,7 +85,7 @@ np.fill_diagonal(I0, np.array([I0_1, I0_2, I0_3]))
 
 rest_lengths = flagella_body.rest_lengths
 alpha_c = 4.0 / 3.0
-shear_modulus = E / (poisson_ratio + 1.0)
+shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 
 bending_matrix = np.zeros((3, 3, n_elem_body - n_elem_head))
 

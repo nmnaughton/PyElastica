@@ -26,7 +26,7 @@ nu = 10
 E = 1e6
 # For shear modulus of 1e4, nu is 99!
 poisson_ratio = 99
-shear_modulus = E / (poisson_ratio + 1.0)
+shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 
 # Create rod
 shearable_rod = CosseratRod.straight_rod(

@@ -42,7 +42,7 @@ def simulate_rolling_friction_initial_velocity_with(IFactor=0.0):
     E = 1e9
     # For shear modulus of 2E/3
     poisson_ratio = 0.5
-    shear_modulus = E / (poisson_ratio + 1.0)
+    shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 
     # Set shear matrix
     shear_matrix = np.repeat(1e4 * np.identity((3))[:, :, np.newaxis], n_elem, axis=2)

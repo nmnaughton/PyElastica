@@ -38,7 +38,7 @@ slack = 3
 number_of_rotations = 27
 # For shear modulus of 1e5, nu is 99!
 poisson_ratio = 9
-shear_modulus = E / (poisson_ratio + 1.0)
+shear_modulus = 0.5 * E / (poisson_ratio + 1.0)
 shear_matrix = np.repeat(
     shear_modulus * np.identity((3))[:, :, np.newaxis], n_elem, axis=2
 )
